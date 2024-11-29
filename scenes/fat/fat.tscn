@@ -913,7 +913,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"ATACK_SE",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1149,7 +1149,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"atack_NW",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1224,24 +1224,27 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fhccp")
 }],
-"loop": true,
+"loop": false,
 "name": &"delet",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"spawn",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_av4go"]
 size = Vector2(7, 15.5)
 
-[node name="fat" type="CharacterBody2D"]
+[node name="fat" type="CharacterBody2D" groups=["fat"]]
 script = ExtResource("1_lymkr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 7)
 scale = Vector2(0.130371, 0.122472)
 sprite_frames = SubResource("SpriteFrames_us7ys")
-animation = &"ATACK SW"
-frame = 19
-frame_progress = 0.778099
+animation = &"delet"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 7)
