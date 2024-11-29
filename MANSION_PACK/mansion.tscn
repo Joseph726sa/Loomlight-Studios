@@ -1,8 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://crr80j3bx4frl"]
+[gd_scene load_steps=12 format=3 uid="uid://crr80j3bx4frl"]
 
 [ext_resource type="Texture2D" uid="uid://ci50y4e67ghgr" path="res://MANSION_PACK/Tiles.png" id="1_ddtej"]
 [ext_resource type="Texture2D" uid="uid://dtxbedypnycpg" path="res://MANSION_PACK/Props.png" id="2_abjnl"]
 [ext_resource type="Texture2D" uid="uid://cievmf5nkkupj" path="res://SpritesImage/LLAVE.png" id="3_nyemj"]
+[ext_resource type="Texture2D" uid="uid://d1oee1gdee01" path="res://SpritesImage/1.png" id="4_nv2li"]
+[ext_resource type="Texture2D" uid="uid://bo8imuafym6df" path="res://SpritesImage/BARRA_DE_VIDA/1.png" id="5_apck7"]
+[ext_resource type="Texture2D" uid="uid://btvvbikg2r3j7" path="res://SpritesImage/BARRA_DE_VIDA/3.png" id="6_fw1vg"]
+[ext_resource type="Texture2D" uid="uid://ia267a1to0n3" path="res://SpritesImage/BARRA_DE_VIDA/4.png" id="7_x4k2o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r83rw"]
 texture = ExtResource("1_ddtej")
@@ -536,15 +540,54 @@ layer_0/tile_data = PackedInt32Array(131099, 393217, 9, 131101, 458753, 9, 26217
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(44, 47)
-scale = Vector2(0.198077, 0.192857)
+position = Vector2(439, 47)
+scale = Vector2(0.272115, 0.260714)
 texture = ExtResource("3_nyemj")
 
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 67.0
-offset_top = 21.0
-offset_right = 107.0
-offset_bottom = 71.0
+[node name="Label_paraContar" type="Label" parent="CanvasLayer"]
+offset_left = 459.375
+offset_top = 17.5
+offset_right = 499.375
+offset_bottom = 67.5
 theme_override_font_sizes/font_size = 36
 text = "0
 "
+
+[node name="Label_cuantasLLavesAy" type="Label" parent="CanvasLayer"]
+offset_left = 495.375
+offset_top = 19.5
+offset_right = 535.375
+offset_bottom = 69.5
+theme_override_font_sizes/font_size = 36
+text = "/5"
+
+[node name="izquierda" type="TextureRect" parent="CanvasLayer"]
+offset_left = 45.0
+offset_top = 4.0
+offset_right = 125.0
+offset_bottom = 84.0
+texture = ExtResource("5_apck7")
+
+[node name="centro" type="TextureRect" parent="CanvasLayer"]
+offset_left = 125.0
+offset_top = 3.0
+offset_right = 238.0
+offset_bottom = 85.0
+texture = ExtResource("6_fw1vg")
+
+[node name="derecha" type="TextureRect" parent="CanvasLayer"]
+offset_left = 237.0
+offset_top = 3.0
+offset_right = 328.0
+offset_bottom = 85.0
+texture = ExtResource("7_x4k2o")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
+offset_left = 86.0
+offset_top = 38.0
+offset_right = 320.0
+offset_bottom = 45.0
+max_value = 10.0
+value = 10.0
+nine_patch_stretch = true
+texture_progress = ExtResource("4_nv2li")
