@@ -1,0 +1,97 @@
+[gd_scene load_steps=14 format=3 uid="uid://dsbyv7cs71ahm"]
+
+[ext_resource type="Script" path="res://Scripts/S_AreaLlave.gd" id="1_ctst8"]
+[ext_resource type="Texture2D" uid="uid://b31icfs643e42" path="res://SpritesImage/llave_Recortada.png" id="1_veuwx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3h7fj"]
+radius = 5.0
+height = 18.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3oc2y"]
+atlas = ExtResource("1_veuwx")
+region = Rect2(0, 0, 65, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1t1nh"]
+atlas = ExtResource("1_veuwx")
+region = Rect2(62, 0, 62, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hyodc"]
+atlas = ExtResource("1_veuwx")
+region = Rect2(123, 0, 41, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrudc"]
+atlas = ExtResource("1_veuwx")
+region = Rect2(164, 0, 41, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eatyp"]
+atlas = ExtResource("1_veuwx")
+region = Rect2(212, 0, 53, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57gaw"]
+atlas = ExtResource("1_veuwx")
+region = Rect2(265, 0, 53, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_513xe"]
+atlas = ExtResource("1_veuwx")
+region = Rect2(322, 0, 46, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fjxo"]
+atlas = ExtResource("1_veuwx")
+region = Rect2(364, 0, 52, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idim1"]
+atlas = ExtResource("1_veuwx")
+region = Rect2(416, 0, 52, 108)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cah83"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3oc2y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1t1nh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hyodc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrudc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eatyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57gaw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_513xe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fjxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idim1")
+}],
+"loop": true,
+"name": &"ANIM_LLAVE",
+"speed": 5.0
+}]
+
+[node name="Nodo2D_LLAVE_GAME" type="Node2D"]
+
+[node name="Area2D_LLAVE" type="Area2D" parent="."]
+script = ExtResource("1_ctst8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_LLAVE"]
+shape = SubResource("CapsuleShape2D_3h7fj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D_LLAVE"]
+position = Vector2(-0.636058, -0.499999)
+scale = Vector2(0.177369, 0.157407)
+sprite_frames = SubResource("SpriteFrames_cah83")
+animation = &"ANIM_LLAVE"
+autoplay = "ANIM_LLAVE"
+frame_progress = 0.620268
+
+[connection signal="body_entered" from="Area2D_LLAVE" to="Area2D_LLAVE" method="_on_body_entered"]
