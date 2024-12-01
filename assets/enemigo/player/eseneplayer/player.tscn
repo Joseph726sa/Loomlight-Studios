@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://clkit0pcct62g"]
+
 
 [ext_resource type="Script" path="res://assets/enemigo/player/player.gd" id="1_vtsjh"]
 [ext_resource type="Texture2D" uid="uid://pxjg4ob1x5pn" path="res://sprites/player/walk to left.png" id="2_8ll08"]
@@ -150,21 +150,6 @@ region = Rect2(161, 0, 23, 36)
 atlas = ExtResource("5_02m7c")
 region = Rect2(184, 0, 23, 36)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dnibr"]
-atlas = ExtResource("4_31h4p")
-region = Rect2(0, 0, 23, 37)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5slsu"]
-atlas = ExtResource("3_1qkqn")
-region = Rect2(0, 0, 23, 36)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yxq8j"]
-atlas = ExtResource("2_8ll08")
-region = Rect2(0, 0, 23, 36)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0dood"]
-atlas = ExtResource("5_02m7c")
-region = Rect2(0, 0, 23, 36)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jt2xh"]
 animations = [{
@@ -295,49 +280,5 @@ animations = [{
 "loop": true,
 "name": &"caminar.w",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dnibr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dnibr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dnibr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dnibr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dnibr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5slsu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yxq8j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0dood")
-}],
-"loop": true,
-"name": &"quieta",
-"speed": 2.0
-}]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l2s6r"]
-size = Vector2(21, 28.5)
-
-[node name="CharacterBody2D" type="CharacterBody2D"]
-script = ExtResource("1_vtsjh")
-velociad = 200
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_jt2xh")
-animation = &"quieta"
-frame_progress = 0.612904
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, 1.75)
 shape = SubResource("RectangleShape2D_l2s6r")
