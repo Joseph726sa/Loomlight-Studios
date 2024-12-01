@@ -290,17 +290,17 @@ script = ExtResource("1_cq0ye")
 [node name="MainCharacterMovement" type="Node2D" parent="."]
 
 [node name="MainCharacterCollision" type="Node2D" parent="."]
-position = Vector2(326, 127)
+position = Vector2(401, 287)
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]
-position = Vector2(633, 322)
+position = Vector2(620, 412)
 scale = Vector2(3.47826, 3.27778)
 sprite_frames = SubResource("SpriteFrames_o0rig")
 animation = &"walk to back"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(640, 328)
+position = Vector2(627, 418)
 shape = SubResource("RectangleShape2D_lsv3a")
 
 [node name="Efects" type="AnimatedSprite2D" parent="."]
-position = Vector2(227, 145)
+position = Vector2(302, 305)
