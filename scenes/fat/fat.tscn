@@ -1,4 +1,4 @@
-[gd_scene load_steps=180 format=3 uid="uid://caki1gf00aywa"]
+[gd_scene load_steps=180 format=3 uid="uid://dqyu3uia0t4jg"]
 
 [ext_resource type="Script" path="res://scenes/fat/fat.gd" id="1_lymkr"]
 [ext_resource type="Texture2D" uid="uid://erf3qa3josii" path="res://assets/enemigo/fat/Enemy-Melee-Attack-SW.png" id="2_gajnb"]
@@ -1230,7 +1230,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_av4go"]
-size = Vector2(7, 15.5)
+size = Vector2(8.5, 15.5)
 
 [node name="fat" type="CharacterBody2D"]
 script = ExtResource("1_lymkr")
@@ -1244,13 +1244,14 @@ frame = 19
 frame_progress = 0.778099
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 7)
+position = Vector2(0.25, 7)
 shape = SubResource("RectangleShape2D_av4go")
 
-[node name="rayo" type="Node2D" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
+visible = false
 
-[node name="rayo1" type="RayCast2D" parent="rayo"]
+[node name="rayo 1" type="RayCast2D" parent="Node2D"]
 target_position = Vector2(60, 0)
 
-[node name="rayo2" type="RayCast2D" parent="rayo"]
+[node name="rayo 2" type="RayCast2D" parent="Node2D"]
 target_position = Vector2(-60, 0)
