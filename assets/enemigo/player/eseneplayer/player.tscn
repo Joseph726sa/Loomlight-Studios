@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dhyrns7f84ckh"]
+
 
 [ext_resource type="Script" path="res://assets/enemigo/player/player.gd" id="1_vtsjh"]
 [ext_resource type="Texture2D" uid="uid://pxjg4ob1x5pn" path="res://sprites/player/walk to left.png" id="2_8ll08"]
@@ -150,6 +150,7 @@ region = Rect2(161, 0, 23, 36)
 atlas = ExtResource("5_02m7c")
 region = Rect2(184, 0, 23, 36)
 
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_jt2xh"]
 animations = [{
 "frames": [{
@@ -279,18 +280,5 @@ animations = [{
 "loop": true,
 "name": &"caminar.w",
 "speed": 5.0
-}]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l2s6r"]
-size = Vector2(18, 27)
-
-[node name="CharacterBody2D" type="CharacterBody2D"]
-script = ExtResource("1_vtsjh")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_jt2xh")
-animation = &"caminar.d"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_l2s6r")
