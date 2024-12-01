@@ -1,0 +1,91 @@
+[gd_scene load_steps=5 format=3 uid="uid://er2e3p6s6guv"]
+
+[ext_resource type="VideoStream" path="res://VIDEOs/VideoFondo.ogv" id="1_48ds5"]
+[ext_resource type="Script" path="res://Scripts/S_Menu.gd" id="1_i477d"]
+[ext_resource type="FontFile" uid="uid://cfq7odda7iiwk" path="res://FUENTES_DE_LETRAS/WATCHER PERONAL USE.ttf" id="2_bmmp3"]
+[ext_resource type="FontFile" uid="uid://myi5a8ue02ln" path="res://FUENTES_DE_LETRAS/Run! Demo.otf" id="3_xm1oq"]
+
+[node name="EscenaMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i477d")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_48ds5")
+autoplay = true
+expand = true
+loop = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+visible = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.344
+anchor_top = 0.475
+anchor_right = 0.62
+anchor_bottom = 0.943
+offset_left = -0.288025
+offset_top = 0.199982
+offset_right = -0.23999
+offset_bottom = -0.0640259
+theme_override_constants/separation = 50
+
+[node name="B_Jugar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bmmp3")
+theme_override_font_sizes/font_size = 61
+text = "PLAY
+"
+
+[node name="B_Opciones" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bmmp3")
+theme_override_font_sizes/font_size = 61
+text = "OPCIONES"
+
+[node name="B_salir" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bmmp3")
+theme_override_font_sizes/font_size = 61
+text = "SALIR
+"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.339
+anchor_right = 0.5
+anchor_bottom = 0.364
+offset_left = -560.0
+offset_top = -145.672
+offset_right = 557.0
+offset_bottom = -40.872
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 0.870588)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 0.823529)
+theme_override_constants/shadow_offset_x = -5
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 23
+theme_override_fonts/font = ExtResource("3_xm1oq")
+theme_override_font_sizes/font_size = 70
+text = "SOMBRAS SILENCIOSAS
+"
+
+[connection signal="pressed" from="VBoxContainer/B_Jugar" to="." method="_on_b_jugar_pressed"]
+[connection signal="pressed" from="VBoxContainer/B_Opciones" to="." method="_on_b_opciones_pressed"]
+[connection signal="pressed" from="VBoxContainer/B_salir" to="." method="_on_b_salir_pressed"]
