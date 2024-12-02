@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var velocidad=170 #velocidad de movimiento del personaje modificable
+var velocidad=100 #velocidad de movimiento del personaje modificable
 var gravedad
 
 
@@ -37,7 +37,7 @@ func _physics_process(delta):
 		$Animation.play("walk to right")
 		
 	elif velocity.x > 0:
-		$Animation.play("walk to left")
+		$Animation.play("walk to right")
 		
 	elif velocity.y < 0:
 		$Animation.play("walk to back")

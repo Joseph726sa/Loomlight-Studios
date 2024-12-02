@@ -1,4 +1,4 @@
-[gd_scene load_steps=180 format=3 uid="uid://dqyu3uia0t4jg"]
+[gd_scene load_steps=180 format=3 uid="uid://dun4jbgpo56hc"]
 
 [ext_resource type="Script" path="res://scenes/fat/fat.gd" id="1_lymkr"]
 [ext_resource type="Texture2D" uid="uid://erf3qa3josii" path="res://assets/enemigo/fat/Enemy-Melee-Attack-SW.png" id="2_gajnb"]
@@ -1230,21 +1230,22 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_av4go"]
-size = Vector2(8.5, 15.5)
+size = Vector2(50, 77)
 
 [node name="fat" type="CharacterBody2D"]
 script = ExtResource("1_lymkr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, 7)
-scale = Vector2(0.130371, 0.122472)
+z_index = 5
+position = Vector2(-0.999996, 1)
+scale = Vector2(0.692156, 0.582031)
 sprite_frames = SubResource("SpriteFrames_us7ys")
 animation = &"ATACK SW"
 frame = 19
 frame_progress = 0.778099
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.25, 7)
+position = Vector2(-6, 3.5)
 shape = SubResource("RectangleShape2D_av4go")
 
 [node name="Node2D" type="Node2D" parent="."]

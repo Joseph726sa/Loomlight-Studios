@@ -282,25 +282,32 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lsv3a"]
-size = Vector2(72, 109)
+size = Vector2(13, 8)
 
 [node name="MainCharacter" type="CharacterBody2D"]
+z_index = 5
+position = Vector2(5, -5)
 script = ExtResource("1_cq0ye")
 
 [node name="MainCharacterMovement" type="Node2D" parent="."]
+z_index = 5
 
 [node name="MainCharacterCollision" type="Node2D" parent="."]
-position = Vector2(401, 287)
+z_index = 5
+position = Vector2(5, -5)
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]
-position = Vector2(620, 412)
-scale = Vector2(3.47826, 3.27778)
+z_index = 5
+position = Vector2(-4, 8)
+scale = Vector2(1.04348, 0.777778)
 sprite_frames = SubResource("SpriteFrames_o0rig")
 animation = &"walk to back"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(627, 418)
+z_index = 5
+position = Vector2(-2.5, 17)
 shape = SubResource("RectangleShape2D_lsv3a")
 
 [node name="Efects" type="AnimatedSprite2D" parent="."]
-position = Vector2(302, 305)
+z_index = 5
+position = Vector2(-7, 3)
