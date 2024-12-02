@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://crr80j3bx4frl"]
+[gd_scene load_steps=18 format=3 uid="uid://crr80j3bx4frl"]
 
 [ext_resource type="Texture2D" uid="uid://ci50y4e67ghgr" path="res://MANSION_PACK/Tiles.png" id="1_ddtej"]
 [ext_resource type="Texture2D" uid="uid://dtxbedypnycpg" path="res://MANSION_PACK/Props.png" id="2_abjnl"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dsbyv7cs71ahm" path="res://assets/llave/nodo_2d_llave_game.tscn" id="8_td5md"]
 [ext_resource type="AudioStream" uid="uid://b2dmb3jwsxvmj" path="res://Audio/Spectral Whispers.mp3" id="11_eyl0a"]
 [ext_resource type="FontFile" uid="uid://cfq7odda7iiwk" path="res://FUENTES_DE_LETRAS/WATCHER PERONAL USE.ttf" id="11_ypps8"]
+[ext_resource type="FontFile" uid="uid://myi5a8ue02ln" path="res://FUENTES_DE_LETRAS/Run! Demo.otf" id="12_0os8t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r83rw"]
 texture = ExtResource("1_ddtej")
@@ -839,6 +840,21 @@ theme_override_fonts/font = ExtResource("11_ypps8")
 theme_override_font_sizes/font_size = 56
 text = "FELICIDADES GANASTE"
 
+[node name="ButtonMenu" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 1.036
+anchor_top = 1.111
+anchor_right = 1.165
+anchor_bottom = 1.216
+offset_left = -0.472046
+offset_top = 0.0719604
+offset_right = -0.0800781
+offset_bottom = 0.0319214
+theme_override_fonts/font = ExtResource("12_0os8t")
+theme_override_font_sizes/font_size = 31
+text = "MENU
+"
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-181, -86)
 anchor_mode = 0
@@ -849,3 +865,5 @@ stream = ExtResource("11_eyl0a")
 autoplay = true
 bus = &"Musica"
 parameters/looping = false
+
+[connection signal="pressed" from="CanvasLayer/ButtonMenu" to="MainCharacter" method="_on_button_pressed"]
