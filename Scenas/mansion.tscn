@@ -809,8 +809,20 @@ nine_patch_stretch = true
 texture_progress = ExtResource("4_nv2li")
 metadata/_edit_use_anchors_ = true
 
+[node name="Nodo2D_LLAVE_GAME2" parent="CanvasLayer" instance=ExtResource("8_td5md")]
+position = Vector2(923, 476)
+
 [node name="Nodo2D_LLAVE_GAME" parent="CanvasLayer" instance=ExtResource("8_td5md")]
 position = Vector2(395, 409)
+
+[node name="Nodo2D_LLAVE_GAME3" parent="CanvasLayer" instance=ExtResource("8_td5md")]
+position = Vector2(1183, 357)
+
+[node name="Nodo2D_LLAVE_GAME4" parent="CanvasLayer" instance=ExtResource("8_td5md")]
+position = Vector2(1221, 517)
+
+[node name="Nodo2D_LLAVE_GAME5" parent="CanvasLayer" instance=ExtResource("8_td5md")]
+position = Vector2(1443, 414)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-181, -86)
