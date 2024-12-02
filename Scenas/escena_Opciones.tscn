@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcj2a2c0sdy8h"]
+[gd_scene load_steps=6 format=3 uid="uid://dcj2a2c0sdy8h"]
 
+[ext_resource type="Script" path="res://Scripts/S_Opciones.gd" id="1_mx1or"]
 [ext_resource type="VideoStream" path="res://VIDEOs/VideoFondo.ogv" id="2_dks5o"]
+[ext_resource type="AudioStream" uid="uid://c7xbjvyxhd3tb" path="res://Audio/The Ghosts Within.mp3" id="3_3ottv"]
 [ext_resource type="FontFile" uid="uid://cfq7odda7iiwk" path="res://FUENTES_DE_LETRAS/WATCHER PERONAL USE.ttf" id="3_d6tml"]
 [ext_resource type="FontFile" uid="uid://myi5a8ue02ln" path="res://FUENTES_DE_LETRAS/Run! Demo.otf" id="4_od41v"]
 
@@ -11,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_mx1or")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 layout_mode = 1
@@ -25,7 +28,12 @@ expand = true
 loop = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
 visible = false
+stream = ExtResource("3_3ottv")
+autoplay = true
+bus = &"Musica"
+parameters/looping = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 visible = false
@@ -68,10 +76,10 @@ anchor_left = 0.5
 anchor_top = 0.339
 anchor_right = 0.5
 anchor_bottom = 0.364
-offset_left = -560.0
-offset_top = -145.672
-offset_right = 557.0
-offset_bottom = -40.872
+offset_left = -207.0
+offset_top = -153.672
+offset_right = 298.0
+offset_bottom = -48.872
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 0.870588)
@@ -82,15 +90,23 @@ theme_override_constants/shadow_offset_y = 10
 theme_override_constants/outline_size = 23
 theme_override_fonts/font = ExtResource("4_od41v")
 theme_override_font_sizes/font_size = 70
-text = "SOMBRAS SILENCIOSAS
+text = "OPCIONES
 "
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 170.0
-offset_top = 214.0
-offset_right = 989.0
-offset_bottom = 625.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -380.0
+offset_top = -143.0
+offset_right = 439.0
+offset_bottom = 268.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
 
 [node name="L_VIDEO" type="Label" parent="VBoxContainer2"]
 layout_mode = 2
@@ -101,13 +117,14 @@ text = "VIDEO:"
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer2/HBoxContainer"]
+[node name="LabelFull" type="Label" parent="VBoxContainer2/HBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_d6tml")
 theme_override_font_sizes/font_size = 23
 text = "FullScreen
 "
 
-[node name="CheckBox" type="CheckBox" parent="VBoxContainer2/HBoxContainer"]
+[node name="CheckBox1" type="CheckBox" parent="VBoxContainer2/HBoxContainer"]
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
 theme_override_font_sizes/font_size = 1
@@ -118,6 +135,54 @@ theme_override_fonts/font = ExtResource("3_d6tml")
 theme_override_font_sizes/font_size = 56
 text = "SONIDO:"
 
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+
+[node name="LabelFull3" type="Label" parent="VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_d6tml")
+theme_override_font_sizes/font_size = 23
+text = "TODO
+"
+
+[node name="HSlider3" type="HSlider" parent="VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+max_value = 20.0
+value = 20.0
+
+[node name="LabelFull" type="Label" parent="VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_d6tml")
+theme_override_font_sizes/font_size = 23
+text = "Música
+"
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+max_value = 20.0
+value = 20.0
+
+[node name="LabelFull2" type="Label" parent="VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_d6tml")
+theme_override_font_sizes/font_size = 23
+text = "sonidos fx
+"
+
+[node name="HSlider2" type="HSlider" parent="VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+max_value = 20.0
+value = 20.0
+
+[node name="Button" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+text = "ATRÁS"
+
 [connection signal="pressed" from="VBoxContainer/B_Jugar" to="." method="_on_b_jugar_pressed"]
 [connection signal="pressed" from="VBoxContainer/B_Opciones" to="." method="_on_b_opciones_pressed"]
 [connection signal="pressed" from="VBoxContainer/B_salir" to="." method="_on_b_salir_pressed"]
+[connection signal="toggled" from="VBoxContainer2/HBoxContainer/CheckBox1" to="." method="_on_check_box_1_toggled"]
+[connection signal="value_changed" from="VBoxContainer2/VBoxContainer/HSlider3" to="." method="_on_h_slider_3_value_changed"]
+[connection signal="value_changed" from="VBoxContainer2/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer2/VBoxContainer/HSlider2" to="." method="_on_h_slider_2_value_changed"]
+[connection signal="pressed" from="VBoxContainer2/Button" to="." method="_on_button_pressed"]
