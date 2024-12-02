@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-var contadorLlaves=1
+var contadorLlaves=0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	

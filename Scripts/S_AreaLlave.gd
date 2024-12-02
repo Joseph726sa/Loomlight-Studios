@@ -11,7 +11,10 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_body_entered(body: Node2D) -> void:
-	if body.get_name() == "Player":
+func _on_body_entered(body: Node2D):
+	print("estoy colisionando")
+	if body.is_in_group("Player"):		
 		queue_free()
-		pass # Replace with function body.
+		body.add_Llave()
+		
+	

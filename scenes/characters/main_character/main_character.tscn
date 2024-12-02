@@ -284,7 +284,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lsv3a"]
 size = Vector2(13, 8)
 
-[node name="MainCharacter" type="CharacterBody2D"]
+[node name="MainCharacter" type="CharacterBody2D" groups=["Player"]]
 z_index = 5
 position = Vector2(5, -5)
 script = ExtResource("1_cq0ye")

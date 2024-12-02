@@ -46,6 +46,12 @@ func _physics_process(delta):
 		$Animation.play("walk to front")
 	
 	
-	
+func add_Llave():
+		# Busca el nodo CanvasLayer usando su ruta en la escena
+	var canvasLayer = get_parent().get_node("CanvasLayer")
+	if canvasLayer:
+		canvasLayer.tomarLlaves()
+	else:
+		print("No se encontró el nodo CanvasLayer")
 	
 	
