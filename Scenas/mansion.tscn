@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://crr80j3bx4frl"]
+[gd_scene load_steps=17 format=3 uid="uid://crr80j3bx4frl"]
 
 [ext_resource type="Texture2D" uid="uid://ci50y4e67ghgr" path="res://MANSION_PACK/Tiles.png" id="1_ddtej"]
 [ext_resource type="Texture2D" uid="uid://dtxbedypnycpg" path="res://MANSION_PACK/Props.png" id="2_abjnl"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ia267a1to0n3" path="res://SpritesImage/BARRA_DE_VIDA/4.png" id="7_x4k2o"]
 [ext_resource type="PackedScene" uid="uid://dsbyv7cs71ahm" path="res://assets/llave/nodo_2d_llave_game.tscn" id="8_td5md"]
 [ext_resource type="AudioStream" uid="uid://b2dmb3jwsxvmj" path="res://Audio/Spectral Whispers.mp3" id="11_eyl0a"]
+[ext_resource type="FontFile" uid="uid://cfq7odda7iiwk" path="res://FUENTES_DE_LETRAS/WATCHER PERONAL USE.ttf" id="11_ypps8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r83rw"]
 texture = ExtResource("1_ddtej")
@@ -823,6 +824,20 @@ position = Vector2(1221, 517)
 
 [node name="Nodo2D_LLAVE_GAME5" parent="CanvasLayer" instance=ExtResource("8_td5md")]
 position = Vector2(1443, 414)
+
+[node name="Labelwin" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.949
+anchor_top = 1.014
+anchor_right = 1.295
+anchor_bottom = 1.111
+offset_left = -0.248047
+offset_top = -0.0720215
+offset_right = 0.159912
+offset_bottom = 0.0719604
+theme_override_fonts/font = ExtResource("11_ypps8")
+theme_override_font_sizes/font_size = 56
+text = "FELICIDADES GANASTE"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-181, -86)
